@@ -9,13 +9,13 @@ class Ruffrida
   end
 
   def tick(events)
-    unless @enemy_found
-      move_counter_clockwise
-      search_for_enemy
-    else
+    if @enemy_found
       move_clockwise
       maintain_gun_direction
       shoot
+    else
+      move_counter_clockwise
+      search_for_enemy
     end
   end
 
